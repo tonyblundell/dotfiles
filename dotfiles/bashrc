@@ -1,6 +1,6 @@
-# Bash prompt (cwd time repo\n>).
+# Bash prompt (time cwd repo\n>).
 . ~/.git-prompt.sh
-export PS1='\n\[$(tput setaf 2)\]\w \[$(tput setaf 4)\]\t \[$(tput setaf 3)\]$(__git_ps1 "%s") \[$(tput setaf 2)\] \n↳ \[$(tput sgr0)\]'
+export PS1='\n\[$(tput setaf 2)\]\t \[$(tput setaf 4)\]\w \[$(tput setaf 3)\]$(__git_ps1 "%s") \[$(tput setaf 2)\] \n↳ \[$(tput sgr0)\]'
 
 # Add ~/.bin to PATH - I drop custom shell scripts in there.
 export PATH=$PATH:~/.bin

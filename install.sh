@@ -3,7 +3,7 @@ pwd=`echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"`
 
 echo 'Installing bash config'
 mv ~/.bashrc ~/.bashrc.old.$now
-ln -s $pwd/dotfiles/bashrc` ~/.bashrc
+ln -s $pwd/dotfiles/bashrc ~/.bashrc
 
 mv ~/.inputrc ~/.inputrc.old.$now
 ln -s $pwd/inputrc ~/.inputrc
@@ -25,7 +25,7 @@ ln -s $pwd/vimrc ~/.vim/vimrc
 
 echo 'Installing vim bundles'
 mv ~/.vim/bundle ~/.vim/bundle.old.$now
-mkdir ~/.vim/bundle
+mkdir -p ~/.vim/bundle
 for repo in `cat vimbundles.txt`; do
     cd ~/.vim/bundle && git clone $repo
 done

@@ -3,25 +3,25 @@ pwd=`echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"`
 
 echo 'Installing bash config'
 mv ~/.bashrc ~/.bashrc.old.$now 2>/dev/null
-ln -s $pwd/dotfiles/bashrc ~/.bashrc
+ln -s "$pwd"dotfiles/bashrc ~/.bashrc
 
 mv ~/.inputrc ~/.inputrc.old.$now 2>/dev/null
-ln -s $pwd/inputrc ~/.inputrc
+ln -s "$pwd"dotfiles/inputrc ~/.inputrc
 
 mv ~/.git-prompt.sh ~/.git-prompt.sh.old.$now 2>/dev/null
-ln -s $pwd/git-prompt.sh ~/.git-prompt.sh
+ln -s "$pwd"dotfiles/git-prompt.sh ~/.git-prompt.sh
 
 echo 'Installing git config'
 mv ~/.gitconfig ~/.gitconfig.old.$now 2>/dev/null
-ln -s $pwd/gitconfig ~/.gitconfig
+ln -s "$pwd"dotfiles/gitconfig ~/.gitconfig
 
 echo 'Installing tmux config'
 mv ~/.tmux.conf ~/.tmux.conf.old.$now 2>/dev/null
-ln -s $pwd/tmux.conf ~/.tmux.conf
+ln -s "$pwd"dotfiles/tmux.conf ~/.tmux.conf
 
 echo 'Installing vim config'
 mv ~/.vim/vimrc ~/.vim/vimrc.old.$now 2>/dev/null
-ln -s $pwd/vimrc ~/.vim/vimrc
+ln -s "$pwd"dotfiles/vimrc ~/.vim/vimrc
 
 echo 'Installing vim bundles'
 mv ~/.vim/bundle ~/.vim/bundle.old.$now 2>/dev/null

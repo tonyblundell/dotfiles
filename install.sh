@@ -20,9 +20,9 @@ mv ~/.tmux.conf ~/.tmux.conf.old.$now 2>/dev/null
 ln -s "$pwd"dotfiles/tmux.conf ~/.tmux.conf
 
 echo 'Installing vim config'
-mkdir -p ~/.vim 2>/dev/null
 mv ~/.vim/vimrc ~/.vim/vimrc.old.$now 2>/dev/null
-ln -s "$pwd"dotfiles/vimrc ~/.vim/vimrc
+mv ~/.vimrc ~/.vimrc.old.$now 2>/dev/null
+ln -s "$pwd"dotfiles/vimrc ~/.vimrc
 
 echo 'Installing vim bundles'
 mv ~/.vim/bundle ~/.vim/bundle.old.$now 2>/dev/null

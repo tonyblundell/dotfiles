@@ -1,26 +1,27 @@
 now=`date +"%s"`
+pwd=`echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"`
 
 echo 'Installing bash config'
 mv ~/.bashrc ~/.bashrc.old.$now
-ln -s `readlink -f dotfiles/bashrc` ~/.bashrc
+ln -s $pwd/dotfiles/bashrc` ~/.bashrc
 
 mv ~/.inputrc ~/.inputrc.old.$now
-ln -s `readlink -f dotfiles/inputrc` ~/.inputrc
+ln -s $pwd/inputrc ~/.inputrc
 
 mv ~/.git-prompt.sh ~/.git-prompt.sh.old.$now
-ln -s `readlink -f dotfiles/git-prompt.sh` ~/.git-prompt.sh
+ln -s $pwd/git-prompt.sh ~/.git-prompt.sh
 
 echo 'Installing git config'
 mv ~/.gitconfig ~/.gitconfig.old.$now
-ln -s `readlink -f dotfiles/gitconfig` ~/.gitconfig
+ln -s $pwd/gitconfig ~/.gitconfig
 
 echo 'Installing tmux config'
 mv ~/.tmux.conf ~/.tmux.conf.old.$now
-ln -s `readlink -f dotfiles/tmux.conf` ~/.tmux.conf
+ln -s $pwd/tmux.conf ~/.tmux.conf
 
 echo 'Installing vim config'
 mv ~/.vim/vimrc ~/.vim/vimrc.old.$now
-ln -s `readlink -f dotfiles/vimrc` ~/.vim/vimrc
+ln -s $pwd/vimrc ~/.vim/vimrc
 
 echo 'Installing vim bundles'
 mv ~/.vim/bundle ~/.vim/bundle.old.$now

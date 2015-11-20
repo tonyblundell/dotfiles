@@ -1,0 +1,13 @@
+# Bash prompt (cwd time repo\n>).
+. ~/.git-prompt.sh
+export PS1='\n\[$(tput setaf 2)\]\w \[$(tput setaf 4)\]\t \[$(tput setaf 3)\]$(__git_ps1 "%s") \[$(tput setaf 2)\] \n↳ \[$(tput sgr0)\]'
+
+# Add ~/.bin to PATH - I drop custom shell scripts in there.
+export PATH=$PATH:~/.bin
+
+# Set history file size.
+HISTSIZE=10000
+HISTFILESIZE=100000
+
+# Handy aliases.
+alias ll='ls -alFh'

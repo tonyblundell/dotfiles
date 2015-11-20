@@ -7,6 +7,9 @@ ln -s `readlink -f dotfiles/bashrc` ~/.bashrc
 mv ~/.inputrc ~/.inputrc.old.$now
 ln -s `readlink -f dotfiles/inputrc` ~/.inputrc
 
+mv ~/.git-prompt.sh ~/.git-prompt.sh.old.$now
+ln -s `readlink -f dotfiles/git-prompt.sh` ~/.git-prompt.sh
+
 echo 'Installing git config'
 mv ~/.gitconfig ~/.gitconfig.old.$now
 ln -s `readlink -f dotfiles/gitconfig` ~/.gitconfig

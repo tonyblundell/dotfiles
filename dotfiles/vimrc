@@ -1,6 +1,8 @@
 " Pathogen for managing plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+
+" Pretty defaults for syntax highlighting and indentation
 syntax on
 filetype plugin indent on
 
@@ -12,7 +14,6 @@ nmap <C-b> :CtrlPBuffer<CR>
 let g:ctrlp_open_new_file = 'r'
 
 " NERDtree filesystem explorer
-" ;
 nmap \e :NERDTreeToggle<CR>
 
 " Tagbar

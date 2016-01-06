@@ -1,3 +1,5 @@
+repodir=$(pwd)
+
 # Make backup dir
 backupdir="backup/$(date +%s)/"
 mkdir -p $backupdir
@@ -7,7 +9,7 @@ for dotfile in dotfiles/*
 do
     basename="$(basename $dotfile)"
     mv "$HOME/.$basename" "$backupdir/$basename"
-    ln -s $(readlink -f $dotfile) "$HOME/.$basename"
+    ln -s "$repodir/$dotfile" "$HOME/.$basename"
 done
 
 # Install Vim bundles

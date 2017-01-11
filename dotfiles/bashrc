@@ -11,3 +11,4 @@ HISTFILESIZE=100000
 
 # Handy aliases.
 alias ll='ls -alFh'
+alias vig='vi $(git s | awk '"'"'{print $2}'"'"')'

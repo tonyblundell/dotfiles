@@ -21,5 +21,3 @@
 	fileMode = false
 [color]
     ui = auto
-[merge]
-	tool = p4merge

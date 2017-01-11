@@ -46,10 +46,16 @@ set softtabstop=4
 " Line numbers
 set number
 
+" Crosshair
+set cursorline
+set cursorcolumn
+highlight CursorLine ctermbg=236
+highlight CursorColumn ctermbg=236
+
 " Marker at 80 chars
 if exists("&colorcolumn")
     set colorcolumn=80
-    highlight ColorColumn ctermbg=8
+    highlight ColorColumn ctermbg=236
 endif
 
 " Ctrl-E for switching to last buffer

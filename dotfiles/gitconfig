@@ -23,5 +23,3 @@
     ui = auto
 [merge]
 	tool = p4merge
-[init]
-	templatedir = ~/.gittemplate

@@ -32,8 +32,8 @@ nmap \q :nohlsearch<CR>
 
 " Setup the colorscheme 
 set t_Co=256
-" colorscheme Monokai " Dark
-colorscheme summerfruit256 " Light
+colorscheme Monokai " Dark
+" colorscheme summerfruit256 " Light
 hi Normal ctermbg=none
 hi NonText ctermbg=none
 

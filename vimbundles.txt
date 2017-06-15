@@ -10,3 +10,4 @@ https://github.com/tpope/vim-fugitive.git
 https://github.com/vim-scripts/AutoComplPop
 https://github.com/tpope/vim-pathogen.git
 https://github.com/mileszs/ack.vim.git
+https://github.com/easymotion/vim-easymotion

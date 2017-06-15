@@ -2,9 +2,10 @@
 	name = Tony Blundell
 	email = tonyblundell@gmail.com
 [alias]
-    lg = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date=short --abbrev-commit -n10
-    lgf = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date=short --abbrev-commit
-    lgn = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date=short --abbrev-commit --name-status
+    lg = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit -n10
+    lgf = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit
+    lgn = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit -n10 --name-status
+    lgfn = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit --name-status
     cnf = diff --name-only --diff-filter=U
     ls = ls-remote origin
     lsr = ls-remote
@@ -13,6 +14,8 @@
     d = diff
     dc = diff --cached
     c = commit -m
+    tb = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit HEAD ^master
+    tbf = diff master --name-only
 [core]
 	whitespace = cr-at-eol
 	symlinks = true

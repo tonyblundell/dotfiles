@@ -16,3 +16,20 @@ alias vig='vi $(git s | awk '"'"'{print $2}'"'"')'
 manp() {
     man -t $1 | open -fa Preview
 }
+
+# Docker shortcuts
+dkr() {
+    local name=${PWD##*/}; # Name image after dir
+    case $1 in
+        build)
+            docker build -t $name .;;
+        run)
+            docker run --rm -v $PWD/code:/code ${@:2} $name;;
+        shell)
+            docker run -it --rm -v $PWD/code:/code ${@:2} $name sh;;
+        dist)
+            docker create --name $name-dist $name;
+            docker cp $name-dist:/dist.zip .;
+            docker rm $name-dist;;
+    esac
+}

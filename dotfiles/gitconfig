@@ -2,10 +2,22 @@
 	name = Tony Blundell
 	email = tonyblundell@gmail.com
 [alias]
-    lg = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit -n10
-    lgf = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit
-    lgn = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit -n10 --name-status
-    lgfn = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit --name-status
+    # Log last 10 commits on single lines
+    lgx     = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit -n10
+    lg      = ! git lgx | ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' # Highlight JIRA ticket numbers
+
+    # Log all commits on single lines
+    lgfx    = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit
+    lgf     = ! git lgfx | ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' # Highlight JIRA ticket numbers
+
+    # Log last 10 commits on single lines with name & status of changed files
+    lgnx    = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit -n10 --name-status
+    lgn     = ! git lgnx | ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' # Highlight JIRA ticket numbers
+
+    # Log all commits on single lines with name & status of changed files
+    lgfnx   = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit --name-status
+    lgfn    = ! git lgfnx | ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' # Highlight JIRA ticket numbers
+
     cnf = diff --name-only --diff-filter=U
     ls = ls-remote origin
     lsr = ls-remote

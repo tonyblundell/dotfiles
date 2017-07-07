@@ -13,6 +13,10 @@ HISTFILESIZE=100000
 alias ll='ls -alFh'
 alias vig='vi $(git s | awk '"'"'{print $2}'"'"')'
 
+hl() {
+    ack --passthru --color --color-match="${2:-yellow}" $1;
+}
+
 manp() {
     man -t $1 | open -fa Preview
 }

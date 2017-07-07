@@ -12,6 +12,9 @@ let g:ctrlp_custom_ignore = '.pyc$'
 let g:ctrlp_dotfiles = 0
 nmap <C-b> :CtrlPBuffer<CR>
 let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_depth = 0
+let g:ctrlp_max_height = 15
 
 " NERDtree filesystem explorer
 nmap \e :NERDTreeToggle<CR>

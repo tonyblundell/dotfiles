@@ -2,37 +2,28 @@
 	name = Tony Blundell
 	email = tonyblundell@gmail.com
 [alias]
-    # Log last 10 commits on single lines
-    lgx     = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit -n10
-    lg      = ! git lgx | ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' # Highlight JIRA ticket numbers
-
-    # Log all commits on single lines
-    lgfx    = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit
-    lgf     = ! git lgfx | ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' # Highlight JIRA ticket numbers
-
-    # Log last 10 commits on single lines with name & status of changed files
-    lgnx    = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit -n10 --name-status
-    lgn     = ! git lgnx | ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' # Highlight JIRA ticket numbers
-
-    # Log all commits on single lines with name & status of changed files
-    lgfnx   = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit --name-status
-    lgfn    = ! git lgfnx | ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' # Highlight JIRA ticket numbers
-
-    cnf = diff --name-only --diff-filter=U
-    ls = ls-remote origin
-    lsr = ls-remote
     a = add .
     s = status -s
     d = diff
     dc = diff --cached
     c = commit -m
-    tb = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit HEAD ^master
-    tbf = diff master --name-only
+
+    lgf = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%d.%m.%y %H:%M' --abbrev-commit
+    lg = "!f() { git lgf -n10; }; f"
+    lgnf = "!f() { git lgf --name-status; }; f"
+    lgn = "!f() { git lgf --name-status -n10; }; f"
+
+    tb = "!f() { git lgf HEAD ^${1:-master}; }; f"
+    tbn = "!f() { git log --pretty=format:'%an' | sort | uniq; }; f"
+    tbd = "!f() { git diff ${1:-master}; }; f"
 [core]
 	whitespace = cr-at-eol
 	symlinks = true
 	excludesfile = ~/.gitignore_global
 	filemode = false
 	fileMode = false
+    pager =\
+        ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' | \
+        less -S
 [color]
     ui = auto

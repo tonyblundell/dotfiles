@@ -1,6 +1,7 @@
 [user]
 	name = Tony Blundell
 	email = tonyblundell@gmail.com
+
 [alias]
     a = add .
     s = status -s
@@ -16,6 +17,7 @@
     tb = "!f() { git lgf HEAD ^${1:-master}; }; f"
     tbn = "!f() { git log --pretty=format:'%an' | sort | uniq; }; f"
     tbd = "!f() { git diff ${1:-master}; }; f"
+
 [core]
 	whitespace = cr-at-eol
 	symlinks = true
@@ -23,7 +25,8 @@
 	filemode = false
 	fileMode = false
     pager =\
-        ack --passthru --color --color-match=yellow '[A-Z]{3,5}-[0-9]{1,4}' | \
+        ack --passthru --color --color-match=yellow '[A-Z]{3,}-[0-9]{1,}' | \
         less -S
+
 [color]
     ui = auto

@@ -15,7 +15,7 @@
     lgn = "!f() { git lgf --name-status -n10; }; f"
 
     tb = "!f() { git lgf HEAD ^${1:-master}; }; f"
-    tbn = "!f() { git log --pretty=format:'%an' | sort | uniq; }; f"
+    tbn = "!f() { git log --pretty=format:'%an' HEAD ^${1:-master} | sort | uniq; }; f"
     tbd = "!f() { git diff ${1:-master}; }; f"
 
 [core]

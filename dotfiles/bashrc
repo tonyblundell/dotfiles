@@ -29,9 +29,9 @@ dkr() {
         build)
             docker build -t $name .;;
         run)
-            docker run --rm -v code:/code ${@:2} $name;;
+            docker run --rm -v $PWD/code:/code ${@:2} $name;;
         shell)
-            docker run -it --rm -v code:/code ${@:2} $name sh;;
+            docker run -it --rm -v $PWD/code:/code ${@:2} $name sh;;
         dist)
             docker create --name $name-dist $name;
             docker cp $name-dist:/dist.zip .;

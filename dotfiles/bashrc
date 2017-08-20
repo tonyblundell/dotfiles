@@ -2,6 +2,7 @@
 . ~/.git-prompt.sh
 export PS1='\n\[$(tput setaf 2)\]\t \[$(tput setaf 5)\]\w \[$(tput setaf 3)\]$(__git_ps1 "%s") \[$(tput setaf 2)\] \n→ \[$(tput sgr0)\]'
 
+if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 
 # Add ~/.bin to PATH - I drop custom shell scripts in there.
 export PATH=$PATH:~/.bin

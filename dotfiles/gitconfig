@@ -9,7 +9,7 @@
     dc = diff --cached
     c = commit -m
 
-    lgf = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%y.%m.%d %H:%M' --abbrev-commit
+    lgf = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%y.%m.%d %H:%M'
     lg = "!f() { git lgf -n10; }; f"
     lgnf = "!f() { git lgf --name-status; }; f"
     lgn = "!f() { git lgf --name-status -n10; }; f"
@@ -26,7 +26,7 @@
 	fileMode = false
     pager =\
         ack --passthru --color --color-match=yellow '[A-Z]{3,}-[0-9]{1,}' | \
-        less -S
+        less
 
 [color]
     ui = auto

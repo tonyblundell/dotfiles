@@ -19,6 +19,7 @@
     tbd = "!f() { git diff ${1:-master}; }; f"
 
 [core]
+    editor = vim
 	whitespace = cr-at-eol
 	symlinks = true
 	excludesfile = ~/.gitignore_global

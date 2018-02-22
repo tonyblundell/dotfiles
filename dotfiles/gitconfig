@@ -9,7 +9,7 @@
     dc = diff --cached
     c = commit -m
 
-    lgf = log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%an %Creset%s' --date='format:%y.%m.%d %H:%M'
+    lgf = log --pretty=format:'%C(red)%h %C(green)%ad %C(cyan)%an%C(reset) %s' --date='format:%y.%m.%d %H:%M'
     lg = "!f() { git lgf -n10; }; f"
     lgnf = "!f() { git lgf --name-status; }; f"
     lgn = "!f() { git lgf --name-status -n10; }; f"

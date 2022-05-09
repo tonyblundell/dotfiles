@@ -15,8 +15,8 @@ if [[ ! -z "$ZSH_VERSION" ]]; then
     export PROMPT=$'\n''%F{2}%* %F{5}%n@%m %F{6}%~ %F{3}$(git_branch)%F{2}'$'\n''→%f '
 fi
 
-# Add ~/.bin to PATH - I drop custom shell scripts in there.
-export PATH=$PATH:~/.bin
+# Add ~/bin to PATH - I drop custom shell scripts in there.
+export PATH=$PATH:~/bin
 
 # Set history file size.
 HISTSIZE=10000

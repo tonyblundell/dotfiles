@@ -1,8 +1,19 @@
-# Bash prompt (time cwd repo\n>).
-. ~/.git-prompt.sh
-export PS1='\n\[$(tput setaf 2)\]\t \[$(tput setaf 5)\]\u@\h \[$(tput setaf 6)\]\w \[$(tput setaf 3)\]$(__git_ps1 "%s") \[$(tput setaf 2)\] \n→ \[$(tput sgr0)\]'
-
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+
+# Bash prompt (time cwd repo\n>).
+if [[ ! -z "$BASH_VERSION" ]]; then
+    . ~/.git-prompt.sh
+    export PS1='\n\[$(tput setaf 2)\]\t \[$(tput setaf 5)\]\u@\h \[$(tput setaf 6)\]\w \[$(tput setaf 3)\]$(__git_ps1 "%s") \[$(tput setaf 2)\] \n→ \[$(tput sgr0)\]'
+fi
+
+# ZSH equiv
+if [[ ! -z "$ZSH_VERSION" ]]; then
+    git_branch() {
+        git symbolic-ref --short HEAD 2> /dev/null
+    }
+    setopt PROMPT_SUBST
+    export PROMPT=$'\n''%F{2}%* %F{5}%n@%m %F{6}%~ %F{3}$(git_branch)%F{2}'$'\n''→%f '
+fi
 
 # Add ~/.bin to PATH - I drop custom shell scripts in there.
 export PATH=$PATH:~/.bin

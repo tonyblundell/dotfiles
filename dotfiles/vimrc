@@ -102,11 +102,11 @@ let g:syntastic_stl_format = '%E{ERR(%e:%fe)}%B{ }%W{WARN(%w:%fw)} '
 
 " Statusline git branch display
 function! PrettyFugitiveHead()
-    let head = fugitive#head()
-    if len(head) > 0
-        return head.' '
-    endif
-    return ''
+   let head = FugitiveHead()
+   if len(head) > 0
+       return head.' '
+   endif
+   return ''
 endfunction
 
 " Function for reading a file from another git branch into a new buffer
